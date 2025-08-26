@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  fenics:
+    build: ./docker
+    image: fenics-dolfinx-dev:latest
+    container_name: fenics-dev
+    volumes:
+      - ./:/home/fenics/project
+    environment:
+      - PYTHONUNBUFFERED=1
+    network_mode: host
+    stdin_open: true
+    tty: true
